@@ -12,7 +12,6 @@ const secondContain = document.getElementById('second_container');
 const formSecond = document.getElementById('form_second');
 const logEmailE1 = document.getElementById('log_email');
 const logPasswordE1 = document.getElementById('log_password');
-const quizE1 = document.getElementById('quiz')
 
 
 // for password generator
@@ -99,18 +98,18 @@ function callSecondContainer () {
     secondContain.innerHTML =
         
     `
-        <form class="log_container" id="form_second">
-            <div class="input_contain" id="container">
-                <label for="email" class="log_label">Email Address </label> <br>
-                <input type="text" class="log_input" placeholder="enter email address" id="log_email" required>
+        <form class="login__box" >
+            <div class="log-container"  >
+                <label for="email" class="log-container--label">Email Address </label> <br>
+                <input type="text" class="log-container--input" placeholder="enter email address" id="log_email" required>
             </div>
     
-            <div class="input_contain">
-                <label for="password" class="log_label">Password</label> <br>
-                <input type="text" class="log_input" placeholder="enter password" id="log_password" required>
+            <div class="log-container">
+                <label for="password" class="log-container--label">Password</label> <br>
+                <input type="text" class="log-container--input" placeholder="enter password" id="log_password" required>
             </div>
     
-            <button class="signin" onClick="LoginChecker()"> sign in</button>
+            <button class="login__btn" onClick="LoginChecker()"> sign in</button>
     </div>
 
     `
@@ -124,7 +123,7 @@ function LoginChecker () {
          
      }else{
           alert('INVALID USERNAME OR PASSWORD')
-         
+
      }
 
 }
