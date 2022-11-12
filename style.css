@@ -1,0 +1,135 @@
+*{
+    box-sizing: border-box;
+}
+/*  darkslategray */
+body{
+    background-image: linear-gradient(to right,saddlebrown,darkslategray );
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.line{
+    border-color: red;
+}
+
+.lin{
+    border-color: gainsboro;
+}
+
+.first_container{
+    background-image: url(hold.png);
+    background-size: cover;
+    padding: 1rem;
+    width: 50%;
+    opacity: 1;
+}
+
+form {
+    background-image: linear-gradient(to right,rgba(120, 116, 113, 0.8),rgb(49, 65, 65, 0.4) );
+    padding: 0.6rem;
+}
+
+.input_container{
+    padding: 4px;
+}
+
+.form_first{
+    border-radius: 2px;
+    padding: 0.3rem;
+    cursor: pointer;
+    background-color: rgb(235, 213, 172, 0.7);
+    color: rgb(62, 54, 54);
+}
+
+
+.form_last{
+    border-radius: 2px;
+    padding: 0.3rem;    
+    cursor: pointer;
+    background-color: rgb(235, 213, 172, 0.7);
+    color: rgb(62, 54, 54);
+}
+
+
+.form_email{
+    border-radius: 2px;
+    padding: 0.3rem;
+    background-color: rgb(235, 213, 172, 0.7);
+    color: rgb(62, 54, 54);
+    cursor: pointer;
+}
+
+
+.form_num{
+    border-radius: 2px;
+    padding: 0.3rem;
+    background-color: rgb(235, 213, 172, 0.7);
+    color: rgb(62, 54, 54);    
+    cursor: pointer;
+}
+
+.form_pass{
+    border-radius: 2px;
+    padding: 0.3rem;
+    background-color: rgb(235, 213, 172, 0.7);
+    color: rgb(62, 54, 54);
+    cursor: pointer;
+}
+
+
+
+/* registeration btn */
+.register {
+    background-color: #c89a01;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-top: 1rem;
+    padding: 0.4rem;
+    border-radius: 1rem;
+    border: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.register:hover {
+    background-color: #fdc50b;
+    
+
+}
+
+/* login container */
+
+.second_container{
+    background-color: rgb(235, 213, 172, 0.7);
+    width: 100%;
+    font-size: 1.3rem;
+    padding: 0.5rem; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.log_container{
+    width: 100%;
+    padding: 1rem;
+}
+.log_input{
+    padding: 0.4rem;
+    margin-top: 0.4rem;
+    margin-bottom: 1.4rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.signin{
+    background-color: darkolivegreen;
+    text-align: center;
+    font-size: 1.3rem;
+    border: none;
+    border-radius: 3px;
+    width: 100%;
+
+}
