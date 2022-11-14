@@ -6,12 +6,17 @@ const phoneNumberE1 = document.getElementById('phone_number');
 const emailE1 = document.getElementById('email');
 const passwordE1 = document.getElementById('password');
 const registerE1 = document.getElementById('registerd');
-const secondContain = document.getElementById('second_container');
+
 
 // for the loggin form
+const login = document.querySelector('.login');
 const formSecond = document.getElementById('form_second');
 const logEmailE1 = document.getElementById('log_email');
 const logPasswordE1 = document.getElementById('log_password');
+
+
+// welcome page
+const welcome = document.querySelector('.welcome');
 
 
 // for password generator
@@ -21,16 +26,15 @@ const numbers = '0123456789';
 const symbols = '!@#$%^&*()_+=';
 
 
+
 // registeration event listener
 formE1.addEventListener('submit', (e) => {
     e.preventDefault();
     
     inputs()
-    callSecondContainer()
     alert('YOU HVAE BEEN SUCCEFULLY REGISTERED')
-    // calling the login form
-    
-    
+    // adding the login page 
+    login.classList.add('visible');
 })
 
 
@@ -92,38 +96,12 @@ function generateX() {
 passwordE1.addEventListener('click', generatePassword);
 
 
-//  login form
-function callSecondContainer () {
-
-    secondContain.innerHTML =
-        
-    `
-        <form class="login__box" >
-            <div class="log-container"  >
-                <label for="email" class="log-container--label">Email Address </label> <br>
-                <input type="text" class="log-container--input" placeholder="enter email address" id="log_email" required>
-            </div>
-    
-            <div class="log-container">
-                <label for="password" class="log-container--label">Password</label> <br>
-                <input type="text" class="log-container--input" placeholder="enter password" id="log_password" required>
-            </div>
-    
-            <button class="login__btn" onClick="LoginChecker()"> sign in</button>
-    </div>
-
-    `
-}
-
-
 // checking the logins if corresponding with the registeration form
 function LoginChecker () {
     if ( emailE1.value  === document.getElementById('log_email').value && passwordE1.value === document.getElementById('log_password').value) {
         alert('YOU HAVE BEEN SUCCESSFULLY LOGGED')
-         
-     }else{
+        welcome.classList.add('visible');
+    }else{
           alert('INVALID USERNAME OR PASSWORD')
-
      }
-
 }

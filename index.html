@@ -9,9 +9,9 @@
     <script src="app.js" defer></script>
 
 </head>
-<body>
+<body >
     <!-- registeration container -->
-    <div class="registeration" id="second_container" >    
+    <div class="registeration"  id="welcoming">    
         
         <form class="registeration__box"  id="form">
             <div class="registering-container">
@@ -45,24 +45,32 @@
         </form>
     </div>
 
-    <!-- login container -->
-        <!--<div class="second_container" id="second_container">
-     <div class="login">
-        <form class="login__box" id="form_second">
-            <div class="log-container" >
-                <label for="email" class="log-container--label">Email Address </label> <br>
-                <input type="text" class="log-container--input" placeholder="enter email address" id="log_email" required>
+    <!-- login container-->
+    <div class="login" >
+            <form class="login__box" >
+                <div class="log-container"  >
+                    <label for="email" class="log-container--label">Email Address </label> <br>
+                    <input type="text" class="log-container--input" placeholder="enter email address" id="log_email" required>
+                </div>
+        
+                <div class="log-container">
+                    <label for="password" class="log-container--label">Password</label> <br>
+                    <input type="text" class="log-container--input" placeholder="enter password" id="log_password" required>
+                </div>
+        
+                <button class="login__btn" onClick="LoginChecker()"> sign in</button>
             </div>
+    </div> 
+
     
-            <div class="log-container">
-                <label for="password" class="log-container--label">Password</label> <br>
-                <input type="text" class="class="log-container--input" placeholder="enter password" id="log_password" required>
-            </div>
-    
-            <button class="login__btn" onClick="LoginChecker()"> sign in</button>
+    <!-- welcome page -->
+    <div class="welcome">
+        <div class="welcome__box">
+            <header class="welcoming-head">WELCOME</header>
+            <p class="welcoming-text"> Welcome too our online service, how can we help </p>
+        </div> 
     </div>
-</div> 
--->    
+
 
 
 </body>
