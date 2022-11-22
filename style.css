@@ -80,7 +80,7 @@ body{
 
 }
 
-.log-container{
+.login-container{
     padding: 0.4rem;
     margin-top: 0.4rem;
     margin-bottom: 1.4rem;
@@ -91,11 +91,11 @@ body{
 
 }
 
-.log-container--label{
+.login-container--label{
     font-weight: bold;
 }
 
-.log-container--input{
+.login-container--input{
     background-color: rgb(235, 213, 172, 0.6);
     color: rgb(62, 54, 54);
     border-radius: 2px;
@@ -157,5 +157,7 @@ body{
 .visible{
     visibility: visible;
 }
+
+
 
 

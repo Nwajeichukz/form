@@ -1,107 +1,83 @@
-//  form the registeration form
-const formE1 = document.getElementById('form');
-const firstNameE1 = document.getElementById('First_Name');
-const lastNameE1 = document.getElementById('Last_name');
-const phoneNumberE1 = document.getElementById('phone_number');
-const emailE1 = document.getElementById('email');
-const passwordE1 = document.getElementById('password');
-const registerE1 = document.getElementById('registerd');
+const registerationForm = document.getElementById('form_registeration');
+const registerationFirstname = document.getElementById('first_name');
+const registerationLastname = document.getElementById('last_name');
+const registerationNumber = document.getElementById('phone_number');
+const registerationEmail = document.getElementById('email');
+const registerationPassword = document.getElementById('password');
+const registerationButton = document.getElementById('registeration_btn');
 
+const loginSection = document.querySelector('.login');
+const loginForm = document.getElementById('login_form');
+const loginEmail = document.getElementById('log_email');
+const loginPassword = document.getElementById('log_password');
+const loginButton = document.getElementById('login_btn')
 
-// for the loggin form
-const login = document.querySelector('.login');
-const formSecond = document.getElementById('form_second');
-const logEmailE1 = document.getElementById('log_email');
-const logPasswordE1 = document.getElementById('log_password');
-
-
-// welcome page
-const welcome = document.querySelector('.welcome');
-
-
-// for password generator
-const upperLetters = 'ABCDEFGHIJKMNOPQRSTUVWXYZ';
-const lowerLetters = 'abcdefghijkmnopqrstuvwxyz';
-const numbers = '0123456789';
-const symbols = '!@#$%^&*()_+=';
+const welcomeSection = document.querySelector('.welcome');
 
 
 
-// registeration event listener
-formE1.addEventListener('submit', (e) => {
+const randomCharacters = 'ABC!@#$%^&*()_+=DEFGHIJKMabcdefghij0123456789kmnopqrstuvwxyzNOPQRSTUVWXYZ';
+
+
+registerationForm.addEventListener('submit', (e) => {
     e.preventDefault();
     
-    inputs()
+    registerationCharacter
     alert('YOU HVAE BEEN SUCCEFULLY REGISTERED')
     // adding the login page 
-    login.classList.add('visible');
+    loginSection.classList.add('visible');
 })
 
 
-// input values of the registeration container
-function inputs (){  
-        const firstName = firstNameE1.value;
-        const lastName = lastNameE1.value;
-        const phoneNumber = phoneNumberE1.value;
-        const email = emailE1.value;
-        const password = passwordE1.value;
+
+const registerationCharacter = {
+    firstName: registerationFirstname.value,
+    lastName: registerationLastname.value,
+    number: registerationNumber.value,
+    email: registerationEmail.value,
+    passWord: registerationPassword.value
 }
 
+localStorage.setItem("registerationCharacter", JSON.stringify(registerationCharacter));
+    
+JSON.parse(localStorage.getItem("registerationCharacter"));
 
-function getLowerCase() {
-    return lowerLetters[Math.floor(Math.random() * lowerLetters.length)]
+
+
+
+const getRandomLowerCase = () => {
+    console.log(randomCharacters.charAt(Math.floor(Math.random() * randomCharacters.length)));
 };
 
-function getUpperCase() {
-    return upperLetters[Math.floor(Math.random() * upperLetters.length)]
+const generatePassword = () => {
+    const lengthOfPassword = 10;
 
-}
+    let password = "";
 
-function getNumber() {
-    return numbers[Math.floor(Math.random() * numbers.length)]
-
-}
-
-function getSymbol() {
-    return symbols[Math.floor(Math.random() * symbols.length)]
-
-}
-
-function generatePassword() {
-    const len = 10;
-
-    let password = " ";
-
-    for(let i = password.length; i <= len; i++){
-        const x = generateX();
-        password += x;
+    for(let i = 1; i <= lengthOfPassword; i++){
+        const randomString = getRandomLowerCase();
+        password += randomString;
     }
 
-    passwordE1.value = password;
+    registerationPassword.value = password;
+
 }
 
-function generateX() {
-    const xs = [];
-        xs.push(getUpperCase())
-
-        xs.push(getLowerCase())
-
-        xs.push(getNumber())
-
-        xs.push(getSymbol())
-
-    return xs[Math.floor(Math.random() * xs.length)];
-}
-
-passwordE1.addEventListener('click', generatePassword);
 
 
-// checking the logins if corresponding with the registeration form
-function LoginChecker () {
-    if ( emailE1.value  === document.getElementById('log_email').value && passwordE1.value === document.getElementById('log_password').value) {
+registerationPassword.addEventListener('click', generatePassword);
+
+
+loginForm.addEventListener('submit', (e) => {
+    e.preventDefault()
+
+    if ( registerationEmail.value  === loginEmail.value && registerationPassword.value === loginPassword.value) {
         alert('YOU HAVE BEEN SUCCESSFULLY LOGGED')
-        welcome.classList.add('visible');
+        welcomeSection.classList.add('visible');
     }else{
           alert('INVALID USERNAME OR PASSWORD')
      }
-}
+
+})
+
+
